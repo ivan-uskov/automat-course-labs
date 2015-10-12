@@ -1,0 +1,1 @@
+pkill my-go-server

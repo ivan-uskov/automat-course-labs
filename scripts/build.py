@@ -28,7 +28,7 @@ class MyProcess(subprocess.Popen):
         self.wait()
 
 def build_server_exe():
-    exe_name = 'server.exe' if sys.platform.startswith('win32') else 'server'
+    exe_name = 'my-go-server.exe' if sys.platform.startswith('win32') else 'my-go-server'
     output_dir = os.path.join('..', '..', 'bin', exe_name)
     args = ["go", "build", "-o", output_dir]
     env = os.environ.copy()

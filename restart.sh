@@ -1,2 +1,2 @@
-pkill my-go-server
+./stop.sh
 ./run.sh

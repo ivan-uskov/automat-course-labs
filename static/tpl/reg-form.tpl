@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
-	<link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     <script type="text/javascript" src="/js/lib/jquery.js"></script>
-	<script type="text/javascript" src="/js/form_validator.js"></script>
-	<script type="text/javascript" src="/js/classes/FormField.class.js"></script>
-	<script type="text/javascript" src="/js/classes/DuplicateFormField.class.js"></script>
-	<script type="text/javascript" src="/js/classes/Form.class.js"></script>
-	<script type="text/javascript" src="/js/form_handler.js"></script>
+    <script type="text/javascript" src="/js/form_validator.js"></script>
+    <script type="text/javascript" src="/js/classes/FormField.class.js"></script>
+    <script type="text/javascript" src="/js/classes/DuplicateFormField.class.js"></script>
+    <script type="text/javascript" src="/js/classes/Form.class.js"></script>
+    <script type="text/javascript" src="/js/form_handler.js"></script>
   </head>
   <body>
     <div class="container">
@@ -38,9 +38,9 @@
             <input type="password" class="form-control" id="userPassword" placeholder="Your New Password" name="password">
           </div>
           <div class="form-group">
-		    <div class="alert alert-danger{{if .hideAlertRepeatPassword}} hidden{{end}}" role="alert">Password should be equals!</div>
-		    <input type="password" class="form-control" id="userPasswordRepeat" placeholder="Repeat Password" name="password_repeat">
-			<p class="help-block">Password should have at least 6 characters with letters and digits</p>
+            <div class="alert alert-danger{{if .hideAlertRepeatPassword}} hidden{{end}}" role="alert">Password should be equals!</div>
+            <input type="password" class="form-control" id="userPasswordRepeat" placeholder="Repeat Password" name="password_repeat">
+            <p class="help-block">Password should have at least 6 characters with letters and digits</p>
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>

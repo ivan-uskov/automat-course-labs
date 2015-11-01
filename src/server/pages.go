@@ -11,6 +11,10 @@ func RenderUserPage(ctx *gin.Context, user *SiteUser) {
 	})
 }
 
+func GetRenderLifeGamePage(ctx *gin.Context) {
+	ctx.HTML(http.StatusOK, "life-game.tpl", gin.H{})
+}
+
 func GetRenderFormPage(ctx *gin.Context) {
 	renderRegisterForm(ctx, nil)
 }

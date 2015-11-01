@@ -1,0 +1,29 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+canvas
+{
+    display: block;
+    margin: 5% auto;
+}
+
+.controls
+{
+    position: absolute;
+    width: 8%;
+    left: 2%;
+    top: 10%;
+}
+
+.controls .control
+{
+    margin-top: 10px;
+}

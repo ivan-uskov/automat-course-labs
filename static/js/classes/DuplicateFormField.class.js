@@ -3,7 +3,6 @@ var DuplicateFormField = function(id, dependedField)
 	var field = $('#' + id);
 	var container = field.parents('.form-group');
 	var errorHolder = container.find('.alert');
-	var dependedField = dependedField;
 
 	this.validate = function()
 	{

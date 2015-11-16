@@ -21,3 +21,8 @@ function isNicknameValid(nickname)
 {
     return /^[a-zA-Z0-9\_]+$/.test(nickname);
 }
+
+function emptyValidator()
+{
+    return true;
+}

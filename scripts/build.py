@@ -11,7 +11,7 @@ def get_project_path():
     return os.path.realpath(proj_dir)
 
 def get_log_path(name):
-    return os.path.join(get_project_path(), "scripts", "logs", name)
+    return os.path.join(get_project_path(), "logs", name)
 
 class MyProcess(subprocess.Popen):
     def __enter__(self):

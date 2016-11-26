@@ -1,1 +1,0 @@
-Automat theory labs

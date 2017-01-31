@@ -7,9 +7,7 @@
 class Parser
 {
 public:
-    Parser() = default;
-
-    void parse(std::vector<Lexer::Token> tokens);
+    ASTSet & parse(std::vector<Lexer::Token> tokens);
 
 private:
     struct PriorityRange
@@ -38,14 +36,15 @@ private:
     auto findRuleInRange(TypesListIterator const& begin, TypesListIterator const& end, Grammar::Rule const& rule) const;
     size_t findRuleInTypesList(TypesList const& typesList, Grammar::Rule const& rule) const;
 
-    bool FetchTokens(std::vector<Lexer::Token> & tokens);
-    bool FetchToken(std::vector<Lexer::Token> & tokens);
+    bool fetchTokens(std::vector<Lexer::Token> & tokens);
+    bool fetchToken(std::vector<Lexer::Token> & tokens);
 
-    void UpdateState();
-    bool UpdateStateForRules(std::vector<Grammar::Rule> const& rules);
+    void updateState();
+    bool updateStateForRules(std::vector<Grammar::Rule> const& rules);
     void insertNewASTNode(size_t position, Grammar::Rule const& rule);
 
+private:
     Grammar m_grammar;
-    std::vector<std::unique_ptr<IASTNode>> m_buffer;
+    ASTSet m_buffer;
 };
 

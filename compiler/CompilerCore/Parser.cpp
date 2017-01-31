@@ -7,12 +7,14 @@
 using namespace std;
 using namespace Lexer;
 
-void Parser::parse(vector<Token> tokens)
+ASTSet & Parser::parse(vector<Token> tokens)
 {
-    while (FetchTokens(tokens))
+    while (fetchTokens(tokens))
     {
-        UpdateState();
+        updateState();
     }
+
+    return m_buffer;
 }
 
 Parser::PriorityRange Parser::getPriorityRange(pair<ASTNodeType, ASTNodeType> const& priorityPair, TypesListIterator const& begin, TypesListIterator const& end) const
@@ -64,7 +66,7 @@ size_t Parser::findRuleInTypesList(TypesList const& typesList, Grammar::Rule con
     return (ruleIt == range.end) ? typesList.size() : (ruleIt - typesList.begin());
 }
 
-void Parser::UpdateState()
+void Parser::updateState()
 {
     auto const& rules = m_grammar.getRules();
     bool changed = false;
@@ -73,7 +75,7 @@ void Parser::UpdateState()
     {
         changed = false;
         for_each(rules.begin(), rules.end(), [&](auto const& rulesGroup) {
-            while (UpdateStateForRules(rulesGroup))
+            while (updateStateForRules(rulesGroup))
             {
                 changed = true;
             };
@@ -82,7 +84,7 @@ void Parser::UpdateState()
     while (changed);
 }
 
-bool Parser::UpdateStateForRules(vector<Grammar::Rule> const& rules)
+bool Parser::updateStateForRules(vector<Grammar::Rule> const& rules)
 {
     auto bufferModified = false;
     auto typesList = prepareBufferTypesList();
@@ -132,15 +134,15 @@ vector<ASTNodeType> Parser::prepareBufferTypesList() const
     return typesVector;
 }
 
-bool Parser::FetchTokens(vector<Token> & tokens)
+bool Parser::fetchTokens(vector<Token> & tokens)
 {
     auto previousTokensSize = tokens.size();
     auto const& fetchTerminals = m_grammar.getFetchTerminals();
-    while (FetchToken(tokens) && find(fetchTerminals.begin(), fetchTerminals.end(), m_buffer.back()->getType()) == fetchTerminals.end());
+    while (fetchToken(tokens) && find(fetchTerminals.begin(), fetchTerminals.end(), m_buffer.back()->getType()) == fetchTerminals.end());
     return tokens.size() != previousTokensSize;
 }
 
-bool Parser::FetchToken(vector<Token> & tokens)
+bool Parser::fetchToken(vector<Token> & tokens)
 {
     if (!tokens.empty())
     {

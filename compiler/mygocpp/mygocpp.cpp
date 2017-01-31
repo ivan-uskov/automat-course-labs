@@ -11,8 +11,14 @@ int main(int argc, char * argv[])
     Tokenizer tokenizer(cin, cerr);
     tokenizer.scan();
     auto tokens = tokenizer.getTokens();
-    Parser parser;
-    parser.parse(tokens);
+
+    auto & ast = Parser().parse(tokens);
+
+
+    for (auto & astRoot : ast)
+    {
+        
+    }
 
     return 0;
 }

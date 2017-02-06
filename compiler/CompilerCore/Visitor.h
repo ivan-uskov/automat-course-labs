@@ -25,12 +25,8 @@ template<typename Derived, typename T, typename Base>
 class VisitableWithBase : public Base
 {
 public:
-    template <typename... Types>
-    VisitableWithBase(Types... args) : Base(args...) {}
-
-    virtual void accept(T & visitor) const
+    virtual void accept(T & visitor) const override final
     {
         visitor.visit(static_cast<const Derived&>(*this));
-        Base::accept(visitor);
     }
 };

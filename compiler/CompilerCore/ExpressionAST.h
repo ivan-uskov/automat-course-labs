@@ -8,6 +8,8 @@ public:
 
     ASTNodeType getType() const override;
 
+    void accept(IASTNode::ASTVisitor & visitor) const override final;
+
 private:
     std::unique_ptr<IASTNode> m_expression;
 };

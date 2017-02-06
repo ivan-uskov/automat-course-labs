@@ -144,10 +144,7 @@
   <ItemGroup>
     <ClInclude Include="ASTNodeFactory.h" />
     <ClInclude Include="ASTNodeType.h" />
-    <ClInclude Include="BinaryDivAST.h" />
-    <ClInclude Include="BinaryMinusAST.h" />
-    <ClInclude Include="BinaryMulAST.h" />
-    <ClInclude Include="BinaryPlusAST.h" />
+    <ClInclude Include="BinaryOperatorAST.h" />
     <ClInclude Include="Evaluator.h" />
     <ClInclude Include="ExpressionAST.h" />
     <ClInclude Include="Grammar.h" />
@@ -161,14 +158,13 @@
     <ClInclude Include="TokenPattern.h" />
     <ClInclude Include="TokenRegexPattern.h" />
     <ClInclude Include="TokenType.h" />
+    <ClInclude Include="Value.h" />
     <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ASTNodeFactory.cpp" />
-    <ClCompile Include="BinaryDivAST.cpp" />
-    <ClCompile Include="BinaryMinusAST.cpp" />
-    <ClCompile Include="BinaryMulAST.cpp" />
-    <ClCompile Include="BinaryPlusAST.cpp" />
+    <ClCompile Include="BinaryOperatorAST.cpp" />
+    <ClCompile Include="Evaluator.cpp" />
     <ClCompile Include="ExpressionAST.cpp" />
     <ClCompile Include="Grammar.cpp" />
     <ClCompile Include="Parser.cpp" />

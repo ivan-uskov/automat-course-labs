@@ -7,15 +7,19 @@
 using namespace std;
 using namespace Lexer;
 
-ASTSet & Parser::parse(vector<Token> tokens)
+void Parser::parse(vector<Token> tokens)
 {
     while (fetchTokens(tokens))
     {
         updateState();
     }
+}
 
+const ASTSet & Parser::getAST() const
+{
     return m_buffer;
 }
+
 
 Parser::PriorityRange Parser::getPriorityRange(pair<ASTNodeType, ASTNodeType> const& priorityPair, TypesListIterator const& begin, TypesListIterator const& end) const
 {

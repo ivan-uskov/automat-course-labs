@@ -2,15 +2,17 @@
 
 #include "IASTNode.h"
 
+#include "Value.h"
+
 class Evaluator : public IASTNode::ASTVisitor
 {
 public:
-    int eval(IASTNode & node) const;
+    Value eval(const IASTNode & node);
 
-    void visit(const BinaryDivAST & visitable) override;
-    void visit(const BinaryMinusAST & visitable) override;
-    void visit(const BinaryMulAST & visitable) override;
-    void visit(const BinaryPlusAST & visitable) override;
-    void visit(const ExressionAST & visitable) override;
-    void visit(const TokenAST & visitable) override;
+    void visit(const BinaryOperatorAST & op) override;
+    void visit(const ExpressionAST & expr) override;
+    void visit(const TokenAST & token) override;
+
+private:
+    std::vector<Value> mEvalStack;
 };

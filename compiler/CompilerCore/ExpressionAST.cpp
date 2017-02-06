@@ -10,3 +10,8 @@ ASTNodeType ExpressionAST::getType() const
 {
     return ASTNodeType::EXPRESSION;
 }
+
+void ExpressionAST::accept(IASTNode::ASTVisitor & visitor) const
+{
+    m_expression->accept(visitor);
+}

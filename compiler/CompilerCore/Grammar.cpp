@@ -1,20 +1,16 @@
 #include "stdafx.h"
 #include "Grammar.h"
-#include "BinaryPlusAST.h"
-#include "BinaryMinusAST.h"
-#include "BinaryMulAST.h"
-#include "BinaryDivAST.h"
 #include "ExpressionAST.h"
+#include "BinaryOperatorAST.h"
 
 using namespace std;
 
 namespace
 {
-    template <typename T>
-    auto createBinaryOperatorConstructor()
+    auto createBinaryOperatorConstructor(ASTNodeType type)
     {
-        return [](std::vector<std::unique_ptr<IASTNode>> && operands) {
-            return make_unique<T>(move(operands[0]), move(operands[2]));
+        return [type](std::vector<std::unique_ptr<IASTNode>> && operands) {
+            return make_unique<BinaryOperatorAST>(move(operands[0]), move(operands[2]), type);
         };
     }
 
@@ -81,22 +77,22 @@ void Grammar::addArithmeticOperatorsRuls()
 {
     m_rules[Priority::High].push_back({
         { ASTNodeType::EXPRESSION, ASTNodeType::MULT, ASTNodeType::EXPRESSION },
-        createBinaryOperatorConstructor<BinaryMulAST>()
+        createBinaryOperatorConstructor(ASTNodeType::BINARY_MUL)
     });
 
     m_rules[Priority::High].push_back({
         { ASTNodeType::EXPRESSION, ASTNodeType::DIV, ASTNodeType::EXPRESSION },
-        createBinaryOperatorConstructor<BinaryDivAST>()
+        createBinaryOperatorConstructor(ASTNodeType::BINARY_DIV)
     });
 
     m_rules[Priority::Low].push_back({
         { ASTNodeType::EXPRESSION, ASTNodeType::PLUS, ASTNodeType::EXPRESSION },
-        createBinaryOperatorConstructor<BinaryPlusAST>()
+        createBinaryOperatorConstructor(ASTNodeType::BINARY_PLUS)
     });
 
     m_rules[Priority::Low].push_back({
         { ASTNodeType::EXPRESSION, ASTNodeType::MINUS, ASTNodeType::EXPRESSION },
-        createBinaryOperatorConstructor<BinaryMinusAST>()
+        createBinaryOperatorConstructor(ASTNodeType::BINARY_MINUS)
     });
 }
 

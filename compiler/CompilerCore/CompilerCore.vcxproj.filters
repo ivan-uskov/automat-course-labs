@@ -54,19 +54,7 @@
     <ClInclude Include="TokenAST.h">
       <Filter>ast</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryPlusAST.h">
-      <Filter>ast</Filter>
-    </ClInclude>
     <ClInclude Include="ExpressionAST.h">
-      <Filter>ast</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryMulAST.h">
-      <Filter>ast</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryMinusAST.h">
-      <Filter>ast</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryDivAST.h">
       <Filter>ast</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -81,21 +69,15 @@
     <ClInclude Include="Evaluator.h">
       <Filter>eval</Filter>
     </ClInclude>
+    <ClInclude Include="Value.h">
+      <Filter>eval</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryOperatorAST.h">
+      <Filter>ast</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ASTNodeFactory.cpp">
-      <Filter>ast</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryDivAST.cpp">
-      <Filter>ast</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryMinusAST.cpp">
-      <Filter>ast</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryMulAST.cpp">
-      <Filter>ast</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryPlusAST.cpp">
       <Filter>ast</Filter>
     </ClCompile>
     <ClCompile Include="ExpressionAST.cpp">
@@ -130,6 +112,12 @@
     </ClCompile>
     <ClCompile Include="Parser.cpp">
       <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Evaluator.cpp">
+      <Filter>eval</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperatorAST.cpp">
+      <Filter>ast</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

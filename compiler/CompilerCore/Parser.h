@@ -7,7 +7,9 @@
 class Parser
 {
 public:
-    ASTSet & parse(std::vector<Lexer::Token> tokens);
+    void parse(std::vector<Lexer::Token> tokens);
+
+    const ASTSet & getAST() const;
 
 private:
     struct PriorityRange

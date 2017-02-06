@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "../CompilerCore/Tokenizer.h"
 #include "../CompilerCore/Parser.h"
+#include "../CompilerCore/Evaluator.h"
 #include <algorithm>
 
 using namespace std;
@@ -12,12 +13,15 @@ int main(int argc, char * argv[])
     tokenizer.scan();
     auto tokens = tokenizer.getTokens();
 
-    auto & ast = Parser().parse(tokens);
+    auto parser = Parser();
+    parser.parse(tokens);
+    auto const& ast = parser.getAST();
 
+    auto evaluator = Evaluator();
 
-    for (auto & astRoot : ast)
+    for (auto const& astRoot : ast)
     {
-        
+        std::cout << evaluator.eval(*astRoot) << endl;
     }
 
     return 0;

@@ -1,10 +1,14 @@
 #pragma once
 
-#include <boost/variant.hpp>
+#include <variant>
+#include <type_traits>
+#include <iostream>
+#include <variant>
+#include <vector>
 
-typedef boost::variant<std::string, double> Value;
+using Value = std::variant<std::string, double>;
 
-class ValueVisitor : public boost::static_visitor<>
+class ValueVisitor
 {
     std::vector<double> mDoublesStack;
     std::vector<std::string> mStringsStack;
@@ -22,8 +26,8 @@ public:
 
     void fetch(Value & lhs, Value & rhs)
     {
-        boost::apply_visitor(*this, lhs);
-        boost::apply_visitor(*this, rhs);
+        std::visit(*this, lhs);
+        std::visit(*this, rhs);
     }
 
     void applyDoubles(std::function<void(double, double)> && fn)
@@ -42,3 +46,5 @@ public:
         }
     }
 };
+
+std::ostream & operator << (std::ostream & out, const Value & v);

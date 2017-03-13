@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="system">
+      <UniqueIdentifier>{aad4f55b-88ff-476d-9e10-76e1951ffc66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AST">
+      <UniqueIdentifier>{1afb426e-b17f-4fdc-9118-e11d43f60ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lexer">
+      <UniqueIdentifier>{3da71de1-09c2-4096-bf83-28aa62aa0d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parser">
+      <UniqueIdentifier>{b4f6e2cc-7160-49c0-91b3-c28149bf457f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interpreter">
+      <UniqueIdentifier>{83accbe0-eda9-4db4-a6a0-39bdeae04f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="token">
+      <UniqueIdentifier>{da643ed5-c671-4862-b3a7-5f5b3bd7562e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pattern">
+      <UniqueIdentifier>{fea48708-5f31-4289-beab-ad9099b4e52e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="ASTNodeFactory.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="ASTNodeType.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionAST.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="IASTNode.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenAST.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="Grammar.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Evaluator.h">
+      <Filter>interpreter</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryOperatorAST.h">
+      <Filter>AST</Filter>
+    </ClInclude>
+    <ClInclude Include="Tokenizer.h">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenPattern.h">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenPatternProvider.h">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenRegexPattern.h">
+      <Filter>lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Token.h">
+      <Filter>token</Filter>
+    </ClInclude>
+    <ClInclude Include="TokenType.h">
+      <Filter>token</Filter>
+    </ClInclude>
+    <ClInclude Include="Visitor.h">
+      <Filter>pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Value.h">
+      <Filter>interpreter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="compiler.cpp" />
+    <ClCompile Include="ASTNodeFactory.cpp">
+      <Filter>AST</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionAST.cpp">
+      <Filter>AST</Filter>
+    </ClCompile>
+    <ClCompile Include="TokenAST.cpp">
+      <Filter>AST</Filter>
+    </ClCompile>
+    <ClCompile Include="Grammar.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Evaluator.cpp">
+      <Filter>interpreter</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperatorAST.cpp">
+      <Filter>AST</Filter>
+    </ClCompile>
+    <ClCompile Include="Tokenizer.cpp">
+      <Filter>lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="TokenPattern.cpp">
+      <Filter>lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="TokenPatternProvider.cpp">
+      <Filter>lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="TokenRegexPattern.cpp">
+      <Filter>lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="Token.cpp">
+      <Filter>token</Filter>
+    </ClCompile>
+    <ClCompile Include="TokenType.cpp">
+      <Filter>token</Filter>
+    </ClCompile>
+    <ClCompile Include="Value.cpp">
+      <Filter>interpreter</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

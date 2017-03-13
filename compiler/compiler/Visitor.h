@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 template<typename... Types>
 class Visitor;
 

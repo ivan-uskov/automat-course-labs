@@ -3,6 +3,15 @@
 #include "ASTNodeType.h"
 #include "IASTNode.h"
 
+namespace std // VS 2017 remove unary function from standart
+{
+	template <class Arg, class Result>
+	struct unary_function {
+		typedef Arg argument_type;
+		typedef Result result_type;
+	};
+};
+
 #include <boost/lexical_cast.hpp>
 
 class TokenAST : public VisitableSceneNode<TokenAST>
@@ -15,7 +24,7 @@ public:
     template <typename T>
     T getValue() const
     {
-        return boost::lexical_cast<T>(m_value.data(), m_value.size());
+		return boost::lexical_cast<T>(m_value.data(), m_value.size());
     }
 
     template <>

@@ -3,15 +3,6 @@
 #include "ASTNodeType.h"
 #include "IASTNode.h"
 
-namespace std // VS 2017 remove unary function from standart
-{
-	template <class Arg, class Result>
-	struct unary_function {
-		typedef Arg argument_type;
-		typedef Result result_type;
-	};
-};
-
 #include <boost/lexical_cast.hpp>
 
 class TokenAST : public VisitableSceneNode<TokenAST>

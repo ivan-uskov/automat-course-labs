@@ -15,7 +15,7 @@ public:
     template <typename T>
     T getValue() const
     {
-		return boost::lexical_cast<T>(m_value.data(), m_value.size());
+        return boost::lexical_cast<T>(m_value.data(), m_value.size());
     }
 
     template <>
